@@ -21,6 +21,7 @@ const Cards = (props) => {
         clickLike={clickLike}
         card={card}
         like={props.cardsLikeId.includes(card._id)}
+        key={card._id}
       />
     );
   });
