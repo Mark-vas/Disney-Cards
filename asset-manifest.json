@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Disney-Cards/static/css/main.68ca8cf2.css",
+    "main.js": "/Disney-Cards/static/js/main.d2bf7136.js",
+    "static/js/787.8f7176a5.chunk.js": "/Disney-Cards/static/js/787.8f7176a5.chunk.js",
+    "index.html": "/Disney-Cards/index.html",
+    "main.68ca8cf2.css.map": "/Disney-Cards/static/css/main.68ca8cf2.css.map",
+    "main.d2bf7136.js.map": "/Disney-Cards/static/js/main.d2bf7136.js.map",
+    "787.8f7176a5.chunk.js.map": "/Disney-Cards/static/js/787.8f7176a5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.68ca8cf2.css",
+    "static/js/main.d2bf7136.js"
+  ]
+}
