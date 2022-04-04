@@ -25,7 +25,11 @@ const Card = (props) => {
         src={img}
         style={props.like ? yesLike : notLike}
       />
-      <button onClick={props.clickDel} id={props.card._id}>
+      <button
+        onClick={props.clickDel}
+        id={props.card._id}
+        className={styles.btn}
+      >
         Delete
       </button>
     </div>
