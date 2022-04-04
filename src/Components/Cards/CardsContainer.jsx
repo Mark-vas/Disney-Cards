@@ -9,6 +9,7 @@ import {
 import Cards from "./Cards";
 import Checkbox from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
+import Preloader from "../Preloader/Preloader";
 
 class CardsContainer extends React.Component {
   componentDidMount() {
@@ -28,21 +29,33 @@ class CardsContainer extends React.Component {
   render() {
     return (
       <>
-        <div>
-          <FormControlLabel
-            label="Show liked cards"
-            control={<Checkbox onChange={this.clickFilter} />}
-          ></FormControlLabel>
-        </div>
-        <Cards
-          cards={
-            this.state.editCheckbox ? this.props.allCardsLike : this.props.cards
-          }
-          cardsLikeId={this.props.cardsLikeId}
-          clickLikeAC={this.props.clickLikeAC}
-          getAllLikeCardsAC={this.props.getAllLikeCardsAC}
-          clickDelCardsAC={this.props.clickDelCardsAC}
-        />
+        {this.props.error ? (
+          <h1>{this.props.error}</h1>
+        ) : (
+          <>
+            <div>
+              <FormControlLabel
+                label="Show liked cards"
+                control={<Checkbox onChange={this.clickFilter} />}
+              ></FormControlLabel>
+            </div>
+            {this.props.isPreloader ? (
+              <Preloader isPreloader={this.props.isPreloader} />
+            ) : (
+              <Cards
+                cards={
+                  this.state.editCheckbox
+                    ? this.props.allCardsLike
+                    : this.props.cards
+                }
+                cardsLikeId={this.props.cardsLikeId}
+                clickLikeAC={this.props.clickLikeAC}
+                getAllLikeCardsAC={this.props.getAllLikeCardsAC}
+                clickDelCardsAC={this.props.clickDelCardsAC}
+              />
+            )}
+          </>
+        )}{" "}
       </>
     );
   }
@@ -53,6 +66,8 @@ let mapStateToProps = (state) => {
     cards: state.cards,
     cardsLikeId: state.cardsLikeId,
     allCardsLike: state.allCardsLike,
+    isPreloader: state.isPreloader,
+    error: state.error,
   };
 };
 
